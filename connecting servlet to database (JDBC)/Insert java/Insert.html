@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Registration</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      width: 350px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #333333;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .form-group input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input[type="text"]:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    .form-group input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Employee Registration</h2>
+    <form method="get" action="InsertOracle">
+      <div class="form-group">
+        <label for="eno">Employee ID:</label>
+        <input type="text" id="eno" name="eno" required>
+      </div>
+      <div class="form-group">
+        <label for="ename">Employee Name:</label>
+        <input type="text" id="ename" name="ename" required>
+      </div>
+      <div class="form-group">
+        <label for="esal">Employee Salary:</label>
+        <input type="text" id="esal" name="esal" required>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Register">
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

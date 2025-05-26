@@ -1,0 +1,5 @@
+create table emp(eno int,ename varchar(20),esal int);
+insert into emp values(1001,'heisenberg',20000)
+insert into emp values(1002,'James McGill',30000)
+
+select * from emp
