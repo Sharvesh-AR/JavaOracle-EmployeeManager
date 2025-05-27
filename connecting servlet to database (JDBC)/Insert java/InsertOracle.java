@@ -23,20 +23,14 @@ public class InsertOracle extends HttpServlet {
 
         Connection con = null;
         try {
-            // Load Oracle JDBC driver
             Class.forName("oracle.jdbc.driver.OracleDriver");
-
-            // Connect to Oracle database
             con = DriverManager.getConnection(
                 "jdbc:oracle:thin:@localhost:1521:XE", "system", "manager"
             );
-
-            // Retrieve parameters
             int empno = Integer.parseInt(req.getParameter("eno"));
             String name = req.getParameter("ename").trim();
             int sal = Integer.parseInt(req.getParameter("esal"));
 
-            // Insert safely using PreparedStatement
             String insertSQL = "INSERT INTO emp (eno, ename, esal) VALUES (?, ?, ?)";
             PreparedStatement pstmt = con.prepareStatement(insertSQL);
             pstmt.setInt(1, empno);
@@ -44,7 +38,6 @@ public class InsertOracle extends HttpServlet {
             pstmt.setInt(3, sal);
             pstmt.executeUpdate();
 
-            // Retrieve and display all employees
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM emp");
 
@@ -79,7 +72,6 @@ public class InsertOracle extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
 
-            // Close resources
             rs.close();
             pstmt.close();
             st.close();
